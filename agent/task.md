@@ -114,3 +114,5 @@ Customer identity and refresh sessions, payments, fulfillment, pricing/promotion
 - Live evidence: API health, all three login desks, protected request, logout, and audit record.
 - Blockers: preserve the existing unrelated Ecommerce changes and record exact host or dependency failures.
 - Handoff: update `agent/plan.md`, this task register, and the identity changelog before commit.
+
+- see all the files in this repo and audit 

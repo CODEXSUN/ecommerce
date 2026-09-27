@@ -1,8 +1,20 @@
 # ECOMMERCE Changelog
 
-Current version: 0.1.3
-Release tag: v-0.1.3
-Changelog label: v 0.1.3
+Current version: 0.1.4
+Release tag: v-0.1.4
+Changelog label: v 0.1.4
+
+## v-0.1.4
+
+### [v 0.1.4] 2026-09-27 9:25 pm - #3 - Record GitHub fork delivery and release convention
+
+#### Database Changes
+
+- Database update: No (manual).
+
+#### App Codebase Changes
+
+- Bumped CODEXSUN workspace version to 0.1.4.
 
 ## v-0.1.3
 

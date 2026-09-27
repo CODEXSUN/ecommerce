@@ -1,6 +1,9 @@
 import { ensurePlatformJwtEnvironment } from "@codexsun/platform-core";
 import { resolve } from "node:path";
 import { applicationDatabasePath } from "./storage.js";
+export { identity, identityBootstrap, identityReady } from "./identity.js";
+
+export { applicationDatabasePath } from "./storage.js";
 
 export const platformAuth = ensurePlatformJwtEnvironment({ applicationId: "ecommerce", envPath: resolve(import.meta.dirname, "../..", ".env") });
 
@@ -10,4 +13,8 @@ export const ecommerceApplication = {
   version: "0.1.0",
   databasePath: applicationDatabasePath("ecommerce"),
   operatorToken: platformAuth.operatorToken,
+  identityDesks: ["/sa/login", "/admin/login", "/login"] as const,
 } as const;
+
+export { EcommerceDatabase } from "./database.js";
+export { createEcommerceHttpServer } from "./http.js";

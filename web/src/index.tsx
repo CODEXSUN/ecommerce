@@ -1,1 +1,1 @@
-export function EcommerceWebEntry(): null { return null; }
+export { StorefrontApp } from "./storefront.js";

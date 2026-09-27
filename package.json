@@ -1,9 +1,10 @@
 {
   "name": "@codexsun/ecommerce",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "workspaces": [
+    "contracts",
     "api",
     "web"
   ],
@@ -20,6 +21,9 @@
     "check:versions": "node tools/check-versions.mjs",
     "check:repository": "node tools/check-repository.mjs",
     "preflight": "node tools/preflight.mjs",
+    "dev:api": "npm run start --workspace @codexsun/ecommerce-api",
+    "dev:web": "npm run start --workspace @codexsun/ecommerce-web",
+    "dev:ecommerce": "node tools/dev-ecommerce.mjs",
     "verify": "npm run check && npm test && npm run lint && npm run build && npm run check:versions && npm run check:repository",
     "version:bump": "node tools/version-bump.mjs",
     "github:now": "node tools/github-now.mjs",

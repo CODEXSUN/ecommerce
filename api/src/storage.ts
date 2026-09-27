@@ -6,8 +6,8 @@ export function applicationDatabasePath(applicationId: string, environment: Node
   const environmentKey = applicationId.replaceAll("-", "_").toUpperCase() + "_DATABASE_PATH";
   const configuredPath = environment[environmentKey]?.trim();
   const databasePath = configuredPath
-    ? resolve(process.cwd(), configuredPath)
-    : resolve(process.cwd(), "storage", "apps", applicationId, "private", "data", applicationId + "_db.sqlite");
+    ? resolve(import.meta.dirname, "..", "..", configuredPath)
+    : resolve(import.meta.dirname, "..", "..", "storage", "apps", applicationId, "private", "data", applicationId + "_db.sqlite");
   mkdirSync(dirname(databasePath), { recursive: true });
   return databasePath;
 }

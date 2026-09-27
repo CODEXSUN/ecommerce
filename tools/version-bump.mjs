@@ -9,7 +9,7 @@ const [major, minor, patch] = packageJson.version.split(".").map(Number);
 const next = `${major}.${minor}.${patch + 1}`;
 packageJson.version = next;
 writeFileSync(packagePath, `${JSON.stringify(packageJson, null, 2)}\n`);
-for (const workspace of ["api", "web"]) {
+for (const workspace of ["contracts", "api", "web"]) {
   const path = resolve(process.cwd(), workspace, "package.json");
   const value = JSON.parse(readFileSync(path, "utf8"));
   value.version = next;

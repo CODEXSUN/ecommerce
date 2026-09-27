@@ -50,6 +50,41 @@ Customer identity and refresh sessions, payments, fulfillment, pricing/promotion
 
 **TASK-002 — Customer identity and checkout hardening.** Add customer login/session flows, payment-provider boundary contracts, and a browser-level checkout E2E without changing shared owner repositories.
 
+## Completed operational task
+
+**TASK-003 — Prevent duplicate Ecommerce dev launches.**
+
+- Owner: Developer experience and runtime operations.
+- Status: complete.
+- Scope: `tools/dev-ecommerce.mjs` and process documentation only.
+- Dependencies: existing `dev:api` and `dev:web` scripts, API port `6230`, and web port `6231`.
+- Acceptance criteria:
+  - The supervisor checks configured API and web ports before spawning children.
+  - A duplicate launch exits with a clear service/port message and does not spawn children.
+  - A clean launch still starts both services and shuts down together.
+  - Existing Ecommerce processes are not terminated automatically by the guard.
+- Static checks: `npm run check`, `npm test`, and `git diff --check` pass.
+- Live checks: clean launch returned API `302` to `http://127.0.0.1:6231/`; web returned `200`; duplicate launch returned exit code `1` with both occupied ports listed.
+- Blockers: none.
+
+## Planned clone-and-work task
+
+**TASK-004 — Clone and prepare Ecommerce v0.1.1 for continued work.**
+
+- Owner: Repository setup and developer experience.
+- Status: planned.
+- Scope: clone setup, dependency preparation, runtime verification, and process handoff. Do not modify sibling repositories or shared owner repositories.
+- Dependencies: Ecommerce v0.1.1, an approved destination path, and explicit approval before implementation begins.
+- Acceptance criteria:
+  - The cloned checkout has the expected Git root and preserved branch state.
+  - All workspace versions match `0.1.1`.
+  - Dependencies install and static checks pass.
+  - API `6230` redirects to web `6231`, and the landing page returns `200`.
+  - The next bounded-context task is recorded before code changes start.
+- Static checks: `npm run check`, `npm run build`, `npm test`, `npm run check:versions`, `npm run check:repository`, and `git diff --check`.
+- Live checks: `npm run dev:ecommerce`, API redirect, web response, catalog response, and duplicate-launch guard.
+- Blockers: destination path and source clone details need operator approval.
+
 ## TASK-IDENTITY-001: Run live end-to-end login tests for all apps
 
 - Status: pending.

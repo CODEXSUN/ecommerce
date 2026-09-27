@@ -1,0 +1,8 @@
+{
+  "name": "@codexsun/ecommerce-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "check": "tsc -p tsconfig.json --noEmit", "build": "tsc -p tsconfig.json", "test": "node --test" },
+  "dependencies": { "@codexsun/contracts": "file:../../core/packages/contracts", "@codexsun/framework": "file:../../framework", "@codexsun/platform-core": "file:../../platform/packages/platform-core" }
+}

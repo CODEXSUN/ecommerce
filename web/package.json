@@ -1,0 +1,8 @@
+{
+  "name": "@codexsun/ecommerce-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "check": "tsc -p tsconfig.json --noEmit", "build": "tsc -p tsconfig.json" },
+  "dependencies": { "@codexsun/ui": "file:../../ui", "react": "^19.3.0", "react-dom": "^19.3.0" }
+}

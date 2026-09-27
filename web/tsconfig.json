@@ -1,0 +1,5 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": { "module": "ESNext", "moduleResolution": "Bundler", "noEmit": false, "outDir": "../dist/web", "rootDir": "src", "types": ["node"] },
+  "include": ["src"]
+}

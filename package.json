@@ -1,0 +1,13 @@
+{
+  "name": "@codexsun/ecommerce",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["api", "web"],
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.0.0" },
+  "scripts": {
+    "check": "npm run check --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  }
+}

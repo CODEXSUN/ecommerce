@@ -20,13 +20,15 @@
     "lint": "node -e \"console.log('Ecommerce lint baseline passed.')\"",
     "check:versions": "node tools/check-versions.mjs",
     "check:repository": "node tools/check-repository.mjs",
+    "fix:line-endings": "node tools/line-endings.mjs fix",
     "preflight": "node tools/preflight.mjs",
     "dev:api": "npm run start --workspace @codexsun/ecommerce-api",
     "dev:web": "npm run start --workspace @codexsun/ecommerce-web",
     "dev:ecommerce": "node tools/dev-ecommerce.mjs",
     "verify": "npm run check && npm test && npm run lint && npm run build && npm run check:versions && npm run check:repository",
     "version:bump": "node tools/version-bump.mjs",
-    "github:now": "node tools/github-now.mjs",
-    "platform:jwt-token": "tsx tools/platform-jwt-token.ts"
+    "github:now": "node tools/github-helper.mjs",
+    "platform:jwt-token": "tsx tools/platform-jwt-token.ts",
+    "test:release-tools": "node --test tools/line-endings.test.mjs tools/version-bump.test.mjs"
   }
 }

@@ -1,3 +1,23 @@
+# ECOMMERCE Changelog
+
+Current version: 0.1.3
+Release tag: v-0.1.3
+Changelog label: v 0.1.3
+
+## v-0.1.3
+
+### [v 0.1.3] 2026-09-27 - Record GitHub fork delivery and release convention
+
+#### Database Changes
+
+- Database update: No (manual).
+
+#### App Codebase Changes
+
+- Added the standardized release and GitHub review toolset.
+
+## Historical entries
+
 # Ecommerce Change Log
 
 This log records repository foundation changes.
@@ -26,3 +46,4 @@ This log records repository foundation changes.
 - Added standalone application rules and Assist documentation.
 - Added repository, version, and GitHub delivery checks.
 - Kept business modules out of the foundation setup.
+.Trim()

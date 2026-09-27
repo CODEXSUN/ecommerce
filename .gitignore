@@ -12,3 +12,4 @@ storage/**
 !storage/apps/*/private/
 !storage/apps/*/private/data/
 !storage/apps/*/private/data/.gitkeep
+/.idea/

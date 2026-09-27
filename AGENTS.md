@@ -10,6 +10,42 @@ These rules define the safe working boundary for the standalone Ecommerce reposi
 - Keep secrets in ignored environment files.
 - Do not commit database files, runtime deployments, backups, or generated build output.
 
+## Strict write boundary
+
+The only writable repository for this task is `E:\codexsun\ecommerce`.
+
+Allowed:
+
+- Read and write files inside this repository only.
+- Create or update files under this repository's `agent/`, `assist/`, `api/`, `web/`, `contracts/`, `packages/shared/`, `storage/`, and `tools/` folders.
+- Run commands from this repository.
+
+Forbidden:
+
+- Do not write to `E:\codexsun\codexsun` or `E:\codexsun\sites`.
+- Do not write to Ecommerce, Billing, LMS, HIMSX, CRM, QCafe, Framework, Platform, UI, Core, or Composition repositories.
+- Do not create files directly under `E:\codexsun`.
+- Do not create, delete, rename, move, reset, or modify another repository.
+- Do not edit sibling repositories to fix a dependency or shared package.
+- Do not modify `node_modules`, generated `dist`, runtime databases, backups, or secrets.
+- Keep shared-package proposals inside this repository under `packages/shared/`.
+- Shared package promotion requires explicit approval and a separate owner-repository task.
+
+Before every command:
+
+1. Confirm the current directory.
+2. Confirm the Git root.
+3. Confirm that the Git root is exactly `E:\codexsun\ecommerce`.
+4. Stop if the Git root is different.
+
+Before every write:
+
+1. Resolve the absolute target path.
+2. Confirm that the target stays inside `E:\codexsun\ecommerce`.
+3. Stop if the target is outside this repository.
+
+Use `Get-Location` and `git rev-parse --show-toplevel` for every repository command.
+
 ## Shared package rule
 
 - Reuse public exports from `@codexsun/ui`, Framework, Platform Core, Contracts, and Core.

@@ -6,4 +6,4 @@ Fresh Ecommerce application repository. Business modules belong here; generic pl
 
 Run `npm install`, then `npm run check` and `npm run build`.
 
-The current local integration uses sibling repositories under `E:\codexsun`. npm package versions will replace these local references after npm publishing is configured.
+The current local integration uses approved sibling repositories under `E:\codexsun`. Keep shared behavior in those owner repositories.

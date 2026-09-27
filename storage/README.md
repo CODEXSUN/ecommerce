@@ -1,7 +1,5 @@
 # Ecommerce Storage
 
-Repository-local runtime storage for the Ecommerce application.
+Repository-local runtime storage for Ecommerce.
 
-## SQLite
-
-The default database is storage/apps/ecommerce/private/data/ecommerce_db.sqlite. Set ECOMMERCE_DATABASE_PATH to override it for a development, test, or deployment environment.
+The default private SQLite location is `storage/apps/ecommerce/private/data/ecommerce_db.sqlite`. Database files remain ignored. The tracked `.gitkeep` file preserves the directory.

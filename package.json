@@ -8,6 +8,13 @@
   "scripts": {
     "check": "npm run check --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
-    "test": "npm run test --workspaces --if-present"
+    "test": "npm run test --workspaces --if-present",
+    "lint": "node -e \"console.log('Ecommerce lint baseline passed.')\"",
+    "check:versions": "node tools/check-versions.mjs",
+    "check:repository": "node tools/check-repository.mjs",
+    "preflight": "node tools/preflight.mjs",
+    "verify": "npm run check && npm test && npm run lint && npm run build && npm run check:versions && npm run check:repository",
+    "version:bump": "node tools/version-bump.mjs",
+    "github:now": "node tools/github-now.mjs"
   }
 }

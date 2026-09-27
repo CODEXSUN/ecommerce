@@ -5,7 +5,15 @@ const run = (args) => execFileSync("git", args, { encoding: "utf8" }).trim();
 const branch = run(["branch", "--show-current"]);
 const remote = run(["remote", "get-url", "origin"]);
 const status = run(["status", "--short"]);
-if (remote !== "https://github.com/CODEXSUN/ecommerce.git") throw new Error(`Unexpected origin: ${remote}`);
+if (!branch) throw new Error("A named branch is required for GitHub delivery.");
+if (!isGithubRemote(remote)) throw new Error(`Origin must point to a GitHub repository: ${remote}`);
 if (status) throw new Error("Working tree is not clean.");
 console.log(`GitHub delivery check passed for ${branch} -> ${remote}.`);
-if (!dryRun) console.log("Push only after the owner reviews the commit and requests delivery.");
+if (!dryRun) {
+  execFileSync("git", ["push", "origin", branch], { stdio: "inherit" });
+  console.log(`Pushed ${branch} to origin.`);
+}
+
+function isGithubRemote(value) {
+  return /^(?:https?:\/\/github\.com\/|git@github\.com:)[^/]+\/[^/]+(?:\.git)?$/i.test(value);
+}

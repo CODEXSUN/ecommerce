@@ -2,6 +2,10 @@
 
 This log records repository foundation changes.
 
+## 0.1.2
+
+- Allow GitHub delivery from developer forks
+
 ## 0.1.1
 
 - Prepared Ecommerce v0.1.1 for clone-and-work continuation

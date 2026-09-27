@@ -4,6 +4,9 @@ This log records process and implementation-task changes for the Ecommerce check
 
 ## 2026-09-27
 
+- Bumped the aligned Ecommerce release to `0.1.2`.
+- Updated `github:now` to support HTTPS and SSH GitHub origins, dry-run validation, and branch push from the main repository or a developer fork.
+- Added Phase 12 and TASK-005 for GitHub fork delivery.
 - Bumped the aligned Ecommerce release to `0.1.1` for clone-and-work handoff.
 - Updated the version-bump workflow to include the contracts workspace and refreshed the lockfile.
 - Added Phase 11 for clone setup, dependency preparation, handoff verification, and approval before the next bounded-context task.

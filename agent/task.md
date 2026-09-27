@@ -85,6 +85,24 @@ Customer identity and refresh sessions, payments, fulfillment, pricing/promotion
 - Live checks: `npm run dev:ecommerce`, API redirect, web response, catalog response, and duplicate-launch guard.
 - Blockers: destination path and source clone details need operator approval.
 
+## Completed fork-delivery task
+
+**TASK-005 — Make GitHub delivery work from the main repository and developer forks.**
+
+- Owner: Developer experience and release operations.
+- Status: complete.
+- Scope: `tools/github-now.mjs`, delivery documentation, version metadata, and process logs.
+- Dependencies: a clean Git tree, a named branch, and a GitHub `origin` remote.
+- Acceptance criteria:
+  - HTTPS and SSH GitHub origins are accepted.
+  - Non-GitHub origins are rejected.
+  - `--dry-run` validates without pushing.
+  - Normal execution pushes the current branch to `origin`.
+  - The main Ecommerce remote passes the delivery command.
+- Static checks: `npm run check`, `npm test`, `npm run build`, `npm run check:versions`, `npm run check:repository`, and `git diff --check`.
+- Live checks: `npm run github:now -- --dry-run` and `npm run github:now`.
+- Blockers: developer fork verification remains pending until a fork URL and write access exist.
+
 ## TASK-IDENTITY-001: Run live end-to-end login tests for all apps
 
 - Status: pending.

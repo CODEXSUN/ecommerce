@@ -13,3 +13,7 @@ Container files and deployment providers belong to this repository. Shared deplo
 ## Safety
 
 Keep local services on loopback during development. Store credentials in environment files or the deployment secret store. Never commit secrets or runtime data.
+
+## First boot authentication
+
+The API creates missing development JWT values in the ignored repository `.env` file. Existing values stay unchanged. Production requires `PLATFORM_JWT_SECRET` before startup.

@@ -3,8 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "workspaces": ["api", "web"],
-  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.0.0" },
+  "workspaces": [
+    "api",
+    "web"
+  ],
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.0.0"
+  },
   "scripts": {
     "check": "npm run check --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
@@ -15,6 +22,7 @@
     "preflight": "node tools/preflight.mjs",
     "verify": "npm run check && npm test && npm run lint && npm run build && npm run check:versions && npm run check:repository",
     "version:bump": "node tools/version-bump.mjs",
-    "github:now": "node tools/github-now.mjs"
+    "github:now": "node tools/github-now.mjs",
+    "platform:jwt-token": "tsx tools/platform-jwt-token.ts"
   }
 }

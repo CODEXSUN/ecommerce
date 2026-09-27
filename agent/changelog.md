@@ -4,6 +4,9 @@ This log records process and implementation-task changes for the Ecommerce check
 
 ## 2026-09-27
 
+- Bumped the aligned Ecommerce release to `0.1.3`.
+- Recorded commit format `#<number> - <short description>` in the release log.
+- Recorded `#28 - Record GitHub fork delivery and release convention` in the application changelog.
 - Bumped the aligned Ecommerce release to `0.1.2`.
 - Updated `github:now` to support HTTPS and SSH GitHub origins, dry-run validation, and branch push from the main repository or a developer fork.
 - Added Phase 12 and TASK-005 for GitHub fork delivery.

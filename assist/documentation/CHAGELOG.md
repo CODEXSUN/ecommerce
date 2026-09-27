@@ -2,6 +2,10 @@
 
 This log records repository foundation changes.
 
+## 0.1.3
+
+- #28 - Record GitHub fork delivery and release convention
+
 ## 0.1.2
 
 - Allow GitHub delivery from developer forks

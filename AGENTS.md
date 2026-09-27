@@ -10,6 +10,15 @@ These rules define the safe working boundary for the standalone Ecommerce reposi
 - Keep secrets in ignored environment files.
 - Do not commit database files, runtime deployments, backups, or generated build output.
 
+## Shared package rule
+
+- Reuse public exports from `@codexsun/ui`, Framework, Platform Core, Contracts, and Core.
+- Do not copy shared components, blocks, helpers, or contracts into application modules.
+- If a required shared capability is missing, prepare a proposal under `packages/shared/<owner>/`.
+- Use `packages/shared/ui/` for missing UI components or blocks.
+- Treat proposal files as application-local work. Do not publish or merge them into an owner repository without explicit approval.
+- Record the proposed public API, ownership, tests, and migration path before requesting approval.
+
 ## Ownership
 
 - The API owns Ecommerce routes, modules, migrations, and database access.
@@ -25,6 +34,7 @@ These rules define the safe working boundary for the standalone Ecommerce reposi
 3. Update documentation when behavior, storage, deployment, or contracts change.
 4. Run `npm run verify` before handoff.
 5. Commit and push only from this repository.
+6. Keep shared-package proposals separate from production imports until approval.
 
 ## Database safety
 
